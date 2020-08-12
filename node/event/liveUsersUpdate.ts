@@ -7,7 +7,7 @@ export async function updateLiveUsers(ctx: EventContext<Clients>) {
   console.log('LIVE USERS: ', liveUsersProducts)
 
   await Promise.all(
-    liveUsersProducts.map(async ({ slug = '', liveUsers = 0 }) => {
+    liveUsersProducts.map(async ({ slug = '', liveUsers= 0 }) => {
        try {
           const [savedProduct] = await ctx.clients.masterdata.searchDocuments<{
           id: string
